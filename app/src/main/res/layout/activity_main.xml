@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/tittleEdt"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="Tittle"
+        android:background="@drawable/edt_design"
+        android:padding="20dp"
+        android:inputType="text"
+        android:textSize="23sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/dexcriptionEdt"
+        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/edt_design"
+        android:hint="Description"
+        android:textSize="20sp"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:minLines="6"
+        android:layout_gravity="top"
+        android:maxLines="10"
+        android:scrollbars="vertical"
+        />
+
+    <Button
+        android:id="@+id/insertBtn"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Insert"
+        android:textStyle="bold"
+        android:background="@drawable/edt_design"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textColor="#30596B"
+        />
+
+    <Button
+        android:id="@+id/showDataBtn"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Show Data"
+        android:textStyle="bold"
+        android:background="@drawable/edt_design"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textColor="#30596B"
+        />
+</LinearLayout>

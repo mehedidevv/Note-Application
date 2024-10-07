@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:background="@drawable/edt_design"
+    android:layout_height="wrap_content">
+
+       <TextView
+           android:id="@+id/idTv"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="8dp"
+           android:textSize="20sp"
+           android:text="ID:" />
+
+       <TextView
+           android:id="@+id/tittleTv"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="8dp"
+           android:textSize="20sp"
+           android:text="Tittle:"
+           />
+
+       <TextView
+           android:id="@+id/descriptionTv"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:padding="10dp"
+           android:textSize="15sp"
+           android:text="Description:"
+           />
+
+   </LinearLayout>
+
+
