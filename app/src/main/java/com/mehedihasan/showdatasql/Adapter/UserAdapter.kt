@@ -1,23 +1,22 @@
-package com.mehedihasan.showdatasql
+package com.mehedihasan.showdatasql.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import com.mehedihasan.showdatasql.ModelClass.User
+import com.mehedihasan.showdatasql.R
 
 class UserAdapter (private val users: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.model_design_user, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val user = users[position]
         holder.idTv.text="ID:"+user.id.toString()
@@ -26,6 +25,7 @@ class UserAdapter (private val users: ArrayList<User>) : RecyclerView.Adapter<Us
     }
 
     override fun getItemCount(): Int {
+       // return  users.size
         return users.count()
     }
 

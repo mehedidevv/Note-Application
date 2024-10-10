@@ -1,4 +1,4 @@
-package com.mehedihasan.showdatasql
+package com.mehedihasan.showdatasql.ModelClass
 
 class User(
     var id: Int = 0,

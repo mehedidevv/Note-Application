@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.UpdateDataActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarUpdate"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".6"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/baseline_arrow_back_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update Activity"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        android:padding="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edit_text_design"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/searchEdt"
+            android:layout_width="0dp"
+            android:layout_weight="80"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:padding="3dp"
+            android:hint="Enter ID"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_gravity="center_vertical"
+            android:backgroundTint="@color/white"
+            />
+
+        <ImageView
+            android:id="@+id/searchBtn"
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="7dp"
+            android:src="@drawable/baseline_manage_search_24"/>
+
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/tittleEdt"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="Tittle"
+        android:background="@drawable/edt_design"
+        android:padding="20dp"
+        android:inputType="text"
+        android:textSize="23sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/descriptionEdt"
+        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/edt_design"
+        android:hint="Description"
+        android:textSize="20sp"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:minLines="6"
+        android:layout_gravity="top"
+        android:maxLines="10"
+        android:scrollbars="vertical"
+        />
+
+    <Button
+        android:id="@+id/insertBtn"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Update"
+        android:textStyle="bold"
+        android:background="@drawable/edt_design"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textColor="#30596B"
+        />
+
+</LinearLayout>

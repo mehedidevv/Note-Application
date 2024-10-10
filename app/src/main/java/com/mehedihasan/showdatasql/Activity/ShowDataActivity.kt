@@ -1,22 +1,21 @@
-package com.mehedihasan.showdatasql
+package com.mehedihasan.showdatasql.Activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.database.Cursor
 import android.os.Bundle
-import android.util.EventLogTags
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mehedihasan.showdatasql.Adapter.UserAdapter
+import com.mehedihasan.showdatasql.DatabaseHelper
+import com.mehedihasan.showdatasql.ModelClass.User
+import com.mehedihasan.showdatasql.R
 import java.util.ArrayList
 
 class ShowDataActivity : AppCompatActivity() {
@@ -38,10 +37,10 @@ class ShowDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_data)
-
+//TODO Connecting Toolbar
         toolBar=findViewById(R.id.toolBar)
         setSupportActionBar(toolBar)
-
+//TODO Connecting Back Arrow
         imageView=findViewById(R.id.backImage)
         addIcon=findViewById(R.id.addIcon)
 
@@ -49,15 +48,16 @@ class ShowDataActivity : AppCompatActivity() {
         searchEdt=findViewById(R.id.searchEdt)
         searchBtn=findViewById(R.id.searchBtn)
 
-        databaseHelper=DatabaseHelper(this)
+        //TODO All Collection.........
+        databaseHelper= DatabaseHelper(this)
         recyclerView=findViewById(R.id.recyclerViewShowData)
         recyclerView.layoutManager=LinearLayoutManager(this)
         userList = ArrayList()
         adapter = UserAdapter(userList as ArrayList<User>)
         recyclerView.adapter = adapter
 
+        //TODO Insert Data Code
         val cursor=databaseHelper.showData()
-
         while (cursor.moveToNext()){
            val id= cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_ID))
            val tittle= cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_TITTLE))
@@ -68,14 +68,14 @@ class ShowDataActivity : AppCompatActivity() {
         }
 
 
-        //TODO ON Click Listner to Back Image
+        //TODO ON Click Listner to Back Arrow
         imageView.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         })
 
         //TODO On Click Listner to Add Icon
         addIcon.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this,MainActivity :: class.java))
+            startActivity(Intent(this, MainActivity :: class.java))
         })
 
 
