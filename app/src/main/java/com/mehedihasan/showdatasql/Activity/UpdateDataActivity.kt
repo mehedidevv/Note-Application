@@ -24,6 +24,9 @@ class UpdateDataActivity : AppCompatActivity() {
     private lateinit var tittleEdt: EditText
     private lateinit var descriptionEdt: EditText
     private lateinit var updateBtn: Button
+    private lateinit var deleteData: Button
+
+
     private lateinit var backImage: ImageView
     private lateinit var toolBarUpdate: Toolbar
 
@@ -46,6 +49,9 @@ class UpdateDataActivity : AppCompatActivity() {
         tittleEdt=findViewById(R.id.tittleEdt)
         descriptionEdt=findViewById(R.id.descriptionEdt)
         updateBtn=findViewById(R.id.insertBtn)
+        deleteData=findViewById(R.id.deleteBtn)
+
+
         backImage=findViewById(R.id.backImage)
         toolBarUpdate=findViewById(R.id.toolBarUpdate)
 
@@ -101,6 +107,28 @@ class UpdateDataActivity : AppCompatActivity() {
                 }else{
                     Toast.makeText(this,"Something Wrong",Toast.LENGTH_SHORT).show()
 
+                }
+            }
+
+        })
+
+        //TODO On Click Listner to Delete Button
+        deleteData.setOnClickListener(View.OnClickListener {
+
+            val tittle: String=tittleEdt.getText().toString()
+            val description: String=descriptionEdt.getText().toString()
+
+            if (tittle.isEmpty() || description.isEmpty()){
+                Toast.makeText(this,"Enter Tittle And Description...",Toast.LENGTH_SHORT).show()
+
+            }else{
+                val check=databaseHelper.deleteData(Id.toInt())
+                if (check>0){
+                    Toast.makeText(this,"Delete Succesfully",Toast.LENGTH_SHORT).show()
+                    tittleEdt.setText(" ")
+                    descriptionEdt.setText(" ")
+                }else{
+                    Toast.makeText(this,"Something Wrong",Toast.LENGTH_SHORT).show()
                 }
             }
 

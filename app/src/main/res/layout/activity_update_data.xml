@@ -130,11 +130,24 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:text="Update"
+        android:layout_gravity="center"
         android:textStyle="bold"
         android:background="@drawable/edt_design"
         android:textAllCaps="true"
         android:textSize="20sp"
-        android:textColor="#30596B"
-        />
+        android:textColor="#30596B" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Delete Data"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/edt_design"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textColor="#30596B" />
 
 </LinearLayout>

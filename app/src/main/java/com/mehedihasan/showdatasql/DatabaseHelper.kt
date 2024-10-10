@@ -69,5 +69,14 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         return  true
     }
 
+    fun deleteData(id: Int): Int {
+        val  sqLiteDatabase=writableDatabase
+        val check: Int=sqLiteDatabase.delete(TABLE_NAME,"$COL_ID = ?", arrayOf(id.toString()))
+        // sqLiteDatabase.close()
+        return check
+
+
+    }
+
 
 }
